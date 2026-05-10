@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Backend & AI Engineer | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050814;
+  --card:#0b1220;
+  --muted:#94a3b8;
+  --text:#e5e7eb;
+  --accent:#60a5fa;
+  --accent2:#a78bfa;
+  --border:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:14px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(5,8,20,0.75);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+nav strong{
+  font-size:14px;
+  color:var(--accent);
+  letter-spacing:0.5px;
+}
+
+nav a{
+  margin-left:18px;
+  font-size:13px;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+/* HERO */
+.hero{
+  padding:140px 10% 80px;
+  background:radial-gradient(circle at top,#0b1220,#050814);
+}
+
+.hero h1{
+  font-size:56px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:16px;
+  max-width:750px;
+  color:var(--muted);
+  font-size:17px;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:18px;
+  padding:6px 12px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* CTA */
+.cta{
+  margin-top:22px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  margin-right:10px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+  font-size:13px;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.btn:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+}
+
+/* SECTION */
+section{
+  padding:70px 10%;
+}
+
+h2{
+  font-size:22px;
+  margin-bottom:18px;
+  color:#f1f5f9;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+}
+
+.card:hover{
+  border-color:rgba(96,165,250,0.4);
+}
+
+/* METRICS */
+.metric{
+  font-size:22px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.small{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* PROJECT CASE STUDY */
+.project-title{
+  font-size:16px;
+  font-weight:600;
+}
+
+.project-meta{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.project-desc{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* SKILLS */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.tag{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+
+/* TIMELINE */
+.timeline{
+  border-left:2px solid var(--border);
+  padding-left:16px;
+}
+
+.item{
+  margin-bottom:16px;
+}
+
+.item h4{
+  font-size:14px;
+}
+
+.item p{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <strong>Backend + AI Engineer</strong>
+  <div>
+    <a href="#impact">Impact</a>
+    <a href="#projects">Case Studies</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Backend & AI Systems Engineer</h1>
+
+  <p>
+    I design and build scalable backend systems and AI-powered applications using FastAPI, Python, and LLM APIs.
+    Focused on production-grade APIs, not just demo projects.
+  </p>
+
+  <div class="badge">CSE Student • Backend Systems • AI Integration</div>
+
+  <div class="cta">
+    <a class="btn" href="#projects">View Case Studies</a>
+    <a class="btn" href="https://github.com/gunitavibe" target="_blank">GitHub</a>
+    <a class="btn" href="mailto:iamgunita705@gmail.com">Contact</a>
+  </div>
+</div>
+
+<!-- IMPACT -->
+<section id="impact">
+  <h2>Impact Snapshot</h2>
+  <div class="grid reveal">
+
+    <div class="card">
+      <div class="metric">2+</div>
+      <div class="small">Production-style backend systems</div>
+    </div>
+
+    <div class="card">
+      <div class="metric">FastAPI</div>
+      <div class="small">Primary backend framework</div>
+    </div>
+
+    <div class="card">
+      <div class="metric">LLM APIs</div>
+      <div class="small">AI integration experience</div>
+    </div>
+
+    <div class="card">
+      <div class="metric">API Design</div>
+      <div class="small">REST + structured workflows</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Case Studies</h2>
+
+  <div class="grid reveal">
+
+    <div class="card">
+      <div class="project-title">AI Exam Assistant</div>
+      <div class="project-meta">FastAPI • OpenAI API • Python</div>
+      <div class="project-desc">
+        Built a structured AI system that processes academic queries using prompt pipelines and context-based generation.
+        Focused on response consistency and API design.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Smart Query API System</div>
+      <div class="project-meta">FastAPI • Deployment • MySQL</div>
+      <div class="project-desc">
+        Designed and deployed a backend API system with optimized query routing and scalable request handling on Render.
+      </div>
+      <div class="cta" style="margin-top:12px;">
+        <a class="btn" href="https://ai-assistant-api-od5r.onrender.com/" target="_blank">Live</a>
+        <a class="btn" href="https://ai-assistant-api-od5r.onrender.com/docs" target="_blank">Docs</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Engineering Stack</h2>
+
+  <div class="grid reveal">
+
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:10px;">Backend</h4>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">REST APIs</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:10px;">Databases</h4>
+      <div class="tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:10px;">AI Systems</h4>
+      <div class="tags">
+        <span class="tag">OpenAI API</span>
+        <span class="tag">Prompt Engineering</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="font-size:14px;margin-bottom:10px;">Tools</h4>
+      <div class="tags">
+        <span class="tag">Git</span>
+        <span class="tag">Docker Basics</span>
+        <span class="tag">Render</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THINKING -->
+<section>
+  <h2>Engineering Approach</h2>
+  <div class="card reveal">
+    I focus on building backend systems with clear API design, predictable behavior, and scalable structure.
+    I prioritize correctness, latency control, and maintainability over feature complexity.
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <h2>Learning Path</h2>
+
+  <div class="timeline reveal">
+
+    <div class="item">
+      <h4>Backend Development</h4>
+      <p>FastAPI, REST architecture, API structuring</p>
+    </div>
+
+    <div class="item">
+      <h4>AI Integration</h4>
+      <p>LLM APIs, prompt workflows, structured outputs</p>
+    </div>
+
+    <div class="item">
+      <h4>System Thinking</h4>
+      <p>Scalability basics, deployment, modular design</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="card reveal">
+    Open to backend and AI engineering internships.
+
+    <div class="cta" style="margin-top:14px;">
+      <a class="btn" href="mailto:iamgunita705@gmail.com">Email</a>
+      <a class="btn" href="https://github.com/gunitavibe" target="_blank">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with FastAPI thinking • Backend + AI focus
+</footer>
+
+<script>
+const items=document.querySelectorAll(".reveal");
+
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.classList.add("show");
+    }
+  });
+},{threshold:0.1});
+
+items.forEach(i=>obs.observe(i));
+</script>
+
+</body>
+</html>
